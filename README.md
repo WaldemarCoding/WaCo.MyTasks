@@ -10,3 +10,6 @@ There are blog Posts on https://www.waldemarcoding.net/ explaining changes made 
 
 ### Part 1 - Setting up Project-Solution
 [MyTasks Teil 1 – Anlegen der Projektstruktur](https://www.waldemarcoding.net/mytasks-teil-1-anlegen-der-projektstruktur)
+
+### Part 2 - Database Creation
+[MyTasks Teil 2 – Datenbank erstellen](https://www.waldemarcoding.net/mytasks-teil-2-datenbank-erstellen/)
