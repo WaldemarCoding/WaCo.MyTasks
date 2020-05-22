@@ -10,6 +10,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Base\WaCo.MyTasks.Core\WaCo.MyTasks.Core.csproj" />
+    <ProjectReference Include="..\..\Base\WaCo.MyTasks.Services\WaCo.MyTasks.Services.csproj" />
+    <ProjectReference Include="..\..\Data\WaCo.MyTasks.DataAccess\WaCo.MyTasks.DataAccess.csproj" />
     <ProjectReference Include="..\..\Logic\WaCo.MyTasks.ToDo\WaCo.MyTasks.ToDo.csproj" />
   </ItemGroup>
 </Project>

@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.Services", "Ba
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.DataAccess", "Data\WaCo.MyTasks.DataAccess\WaCo.MyTasks.DataAccess.csproj", "{7F42D3BC-FFE4-40F6-86A3-FCC11665977F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.ToDo", "Logic\WaCo.MyTasks.ToDo\WaCo.MyTasks.ToDoModule.csproj", "{23A5956A-7D8E-498C-BC0B-69C80C56D405}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.ToDo", "Logic\WaCo.MyTasks.ToDo\WaCo.MyTasks.ToDo.csproj", "{23A5956A-7D8E-498C-BC0B-69C80C56D405}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.DataAccessDBFirst", "Data\WaCo.MyTasks.DataAccessDBFirst\WaCo.MyTasks.DataAccessDBFirst.csproj", "{9ADE3F9A-189E-46FC-9205-C3E4D7B79C11}"
 EndProject

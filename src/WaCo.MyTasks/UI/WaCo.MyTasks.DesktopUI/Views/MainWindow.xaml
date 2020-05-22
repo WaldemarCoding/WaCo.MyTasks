@@ -4,7 +4,7 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:core="clr-namespace:WaCo.MyTasks.Core;assembly=WaCo.MyTasks.Core"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525" >
+        Title="{Binding Title}" Height="600" Width="800" >
     <Grid>
         <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
     </Grid>

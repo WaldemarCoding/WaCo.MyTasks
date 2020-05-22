@@ -8,8 +8,18 @@
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True" >
     <Grid>
-        <TextBlock Text="{Binding Message}"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" />
+        <UniformGrid Columns="2">
+            <DataGrid
+                IsReadOnly="True"
+                ItemsSource="{Binding TaskEntryList}"
+                SelectedItem="{Binding SelectedTaskEntry}"
+                SelectionMode="Single" />
+            <StackPanel>
+                <Button Command="{Binding AddCmd}" Content="Add Entry" />
+                <Button Command="{Binding UpdateCmd}" Content="Update selected Entry" />
+                <Button Command="{Binding DeleteCmd}" Content="Delete selected Entry" />
+                <Button Command="{Binding ReloadCmd}" Content="Reload list" />
+            </StackPanel>
+        </UniformGrid>
     </Grid>
 </UserControl>

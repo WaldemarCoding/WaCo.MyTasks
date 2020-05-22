@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using WaCo.MyTasks.Core;
 
-namespace WaCo.MyTasks.DataAccess
+namespace WaCo.MyTasks.Services
 {
     /// <summary>
     /// Service to for operations on <see cref="TaskEntry"/> entries.
