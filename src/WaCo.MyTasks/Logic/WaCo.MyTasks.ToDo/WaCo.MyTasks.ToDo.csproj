@@ -2,9 +2,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <AssemblyName>WaCo.MyTasks.ToDoModule</AssemblyName>
+    <AssemblyName>WaCo.MyTasks.ToDo</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Prism.Wpf" Version="7.2.0.1422" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Base\WaCo.MyTasks.Core\WaCo.MyTasks.Core.csproj" />
   </ItemGroup>
 </Project>

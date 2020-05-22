@@ -11,17 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{FBBDE032-9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{09ADBC7E-DA1F-4BAB-9A71-C7F9B02CED82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaCo.MyTasks.DesktopUI", "UI\WaCo.MyTasks.DesktopUI\WaCo.MyTasks.DesktopUI.csproj", "{D9A67347-63EA-41E7-8A4F-EB2361DA7070}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.DesktopUI", "UI\WaCo.MyTasks.DesktopUI\WaCo.MyTasks.DesktopUI.csproj", "{D9A67347-63EA-41E7-8A4F-EB2361DA7070}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaCo.MyTasks.Tests", "UI\WaCo.MyTasks.Tests\WaCo.MyTasks.Tests.csproj", "{0091CB1B-3B51-462C-BB88-9AD4CCEA3613}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.Tests", "UI\WaCo.MyTasks.Tests\WaCo.MyTasks.Tests.csproj", "{0091CB1B-3B51-462C-BB88-9AD4CCEA3613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaCo.MyTasks.Core", "Base\WaCo.MyTasks.Core\WaCo.MyTasks.Core.csproj", "{5F4CCE98-BCDD-4A2D-88DE-E168E9768323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.Core", "Base\WaCo.MyTasks.Core\WaCo.MyTasks.Core.csproj", "{5F4CCE98-BCDD-4A2D-88DE-E168E9768323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaCo.MyTasks.Services", "Base\WaCo.MyTasks.Services\WaCo.MyTasks.Services.csproj", "{828EAAF1-BA4E-4127-AE04-27719619555C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.Services", "Base\WaCo.MyTasks.Services\WaCo.MyTasks.Services.csproj", "{828EAAF1-BA4E-4127-AE04-27719619555C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaCo.MyTasks.DataAccess", "Data\WaCo.MyTasks.DataAccess\WaCo.MyTasks.DataAccess.csproj", "{7F42D3BC-FFE4-40F6-86A3-FCC11665977F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.DataAccess", "Data\WaCo.MyTasks.DataAccess\WaCo.MyTasks.DataAccess.csproj", "{7F42D3BC-FFE4-40F6-86A3-FCC11665977F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaCo.MyTasks.ToDoModule", "Logic\WaCo.MyTasks.ToDoModule\WaCo.MyTasks.ToDoModule.csproj", "{23A5956A-7D8E-498C-BC0B-69C80C56D405}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.ToDo", "Logic\WaCo.MyTasks.ToDo\WaCo.MyTasks.ToDo.csproj", "{23A5956A-7D8E-498C-BC0B-69C80C56D405}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
