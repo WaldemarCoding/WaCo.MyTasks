@@ -8,4 +8,8 @@
   <ItemGroup>
     <PackageReference Include="Prism.DryIoc" Version="7.2.0.1422" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Base\WaCo.MyTasks.Core\WaCo.MyTasks.Core.csproj" />
+    <ProjectReference Include="..\..\Logic\WaCo.MyTasks.ToDo\WaCo.MyTasks.ToDo.csproj" />
+  </ItemGroup>
 </Project>

@@ -1,6 +1,8 @@
 ﻿using Prism.Ioc;
 using WaCo.MyTasks.DesktopUI.Views;
 using System.Windows;
+using Prism.Modularity;
+using WaCo.MyTasks.ToDo;
 
 namespace WaCo.MyTasks.DesktopUI
 {
@@ -17,6 +19,11 @@ namespace WaCo.MyTasks.DesktopUI
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
 
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<ToDoModule>();
         }
     }
 }
