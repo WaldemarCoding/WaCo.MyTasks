@@ -12,15 +12,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Base\WaCo.MyTasks.Core\WaCo.MyTasks.Core.csproj" />
-    <ProjectReference Include="..\..\Base\WaCo.MyTasks.Services\WaCo.MyTasks.Services.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="WaCo.EFMyTasksDB.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
