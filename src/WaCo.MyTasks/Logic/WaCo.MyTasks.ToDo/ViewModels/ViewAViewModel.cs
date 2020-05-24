@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using Prism.Commands;
 using Prism.Mvvm;
 using WaCo.MyTasks.Core;
-using WaCo.MyTasks.Services;
+using WaCo.MyTasks.DataAccess;
+using WaCo.MyTasks.Models;
+using WaCo.MyTasks.Services.Interfaces;
 
 namespace WaCo.MyTasks.ToDo.ViewModels
 {
     public class ViewAViewModel : BindableBase
     {
-        private readonly ITaskService _taskService;
+        private readonly ITaskEntryService _taskService;
+        private readonly ITaskEntryRepository _taskEntryRepo;
 
         private BindingList<TaskEntry> _taskEntryList = new BindingList<TaskEntry>();
         public BindingList<TaskEntry> TaskEntryList
@@ -26,9 +30,10 @@ namespace WaCo.MyTasks.ToDo.ViewModels
             set { SetProperty(ref _selectedTaskEntry, value); }
         }
 
-        public ViewAViewModel(ITaskService taskService)
+        public ViewAViewModel(ITaskEntryService taskService, ITaskEntryRepository taskEntryRepo)
         {
             _taskService = taskService;
+            _taskEntryRepo = taskEntryRepo;
 
             UpdateCmd.ObservesProperty(() => SelectedTaskEntry);
             DeleteCmd.ObservesProperty(() => SelectedTaskEntry);
@@ -37,12 +42,13 @@ namespace WaCo.MyTasks.ToDo.ViewModels
         private DelegateCommand _addCmd;
         public DelegateCommand AddCmd => _addCmd ??= new DelegateCommand(ExecuteAddCmd);
 
-        void ExecuteAddCmd()
+        async void ExecuteAddCmd()
         {
             var dt = DateTime.Now;
             var t = new TaskEntry("Test " + dt.TimeOfDay, "Description " + dt.ToLongDateString(), TaskPriority.Medium, dt, dt.AddDays(2));
 
-            _taskService.AddTask(t);
+            _taskEntryRepo.Add(t);
+            await _taskEntryRepo.SaveAsync();
             ReloadCmd.Execute();
         }
 
@@ -55,7 +61,7 @@ namespace WaCo.MyTasks.ToDo.ViewModels
             SelectedTaskEntry.Titel = "Test " + dt.TimeOfDay;
             SelectedTaskEntry.Description = "Description " + dt.ToLongDateString();
             SelectedTaskEntry.StartDate = dt;
-            _taskService.UpdateTask(SelectedTaskEntry);
+            _taskEntryRepo.SaveAsync();
             ReloadCmd.Execute();
         }
 
@@ -69,7 +75,7 @@ namespace WaCo.MyTasks.ToDo.ViewModels
 
         void ExecuteDeleteCmd()
         {
-            _taskService.DeleteTask(SelectedTaskEntry.Id);
+            _taskEntryRepo.Remove(SelectedTaskEntry);
             ReloadCmd.Execute();
         }
 
@@ -84,7 +90,7 @@ namespace WaCo.MyTasks.ToDo.ViewModels
         void ExecuteReloadCmd()
         {
             TaskEntryList.Clear();
-            var values = _taskService.GetAllEntries();
+            var values = _taskService.GetOpenEntries().ToList();
             TaskEntryList.AddRange(values);
         }
     }

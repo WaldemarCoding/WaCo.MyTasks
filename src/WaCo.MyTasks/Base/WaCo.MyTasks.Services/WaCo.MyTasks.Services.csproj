@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\WaCo.MyTasks.DataAccess\WaCo.MyTasks.DataAccess.csproj" />
     <ProjectReference Include="..\WaCo.MyTasks.Core\WaCo.MyTasks.Core.csproj" />
+    <ProjectReference Include="..\WaCo.MyTasks.Services.Interfaces\WaCo.MyTasks.Services.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WaCo.MyTasks.Core;
 
-namespace WaCo.MyTasks.Core
+namespace WaCo.MyTasks.Models
 {
-    public class TaskEntry
+    public class TaskEntry : IEntity
     {
         public TaskEntry(string titel, string description, TaskPriority priority, DateTime startDate,
             DateTime deadlineDate)
@@ -20,22 +21,17 @@ namespace WaCo.MyTasks.Core
 
         public TaskEntry()
         {
-
         }
 
         public int Id { get; set; }
-        [Required] 
-        public string Titel { get; set; }
-        [Required] 
-        public string Description { get; set; }
-        [Required] 
-        public string Priority { get; set; }
+        [Required] public string Titel { get; set; }
+        [Required] public string Description { get; set; }
+        [Required] public string Priority { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? FinishedDate { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime DeadlineDate { get; set; }
 
-        [NotMapped]
-        public TaskPriority PriorityName => (TaskPriority)Enum.Parse(typeof(TaskPriority), Priority);
+        [NotMapped] public TaskPriority PriorityName => (TaskPriority) Enum.Parse(typeof(TaskPriority), Priority);
     }
 }

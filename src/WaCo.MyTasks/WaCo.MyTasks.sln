@@ -27,6 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaCo.MyTasks.DataAccessDBFi
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WaCo.MyTasks.TaskDB", "Data\WaCo.MyTasks.TaskDB\WaCo.MyTasks.TaskDB.sqlproj", "{6C63D4A7-CB38-4A30-AD20-B8B043607B32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaCo.MyTasks.Models", "Base\WaCo.MyTasks.Models\WaCo.MyTasks.Models.csproj", "{2F1B30EC-D164-4BC3-BD0A-9E50D3B10A1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaCo.MyTasks.Services.Interfaces", "Base\WaCo.MyTasks.Services.Interfaces\WaCo.MyTasks.Services.Interfaces.csproj", "{FD5AB81B-6BDB-4786-8C85-55C8F45ABA31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,14 @@ Global
 		{6C63D4A7-CB38-4A30-AD20-B8B043607B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C63D4A7-CB38-4A30-AD20-B8B043607B32}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C63D4A7-CB38-4A30-AD20-B8B043607B32}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2F1B30EC-D164-4BC3-BD0A-9E50D3B10A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1B30EC-D164-4BC3-BD0A-9E50D3B10A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1B30EC-D164-4BC3-BD0A-9E50D3B10A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1B30EC-D164-4BC3-BD0A-9E50D3B10A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD5AB81B-6BDB-4786-8C85-55C8F45ABA31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD5AB81B-6BDB-4786-8C85-55C8F45ABA31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD5AB81B-6BDB-4786-8C85-55C8F45ABA31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD5AB81B-6BDB-4786-8C85-55C8F45ABA31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +92,8 @@ Global
 		{23A5956A-7D8E-498C-BC0B-69C80C56D405} = {09ADBC7E-DA1F-4BAB-9A71-C7F9B02CED82}
 		{9ADE3F9A-189E-46FC-9205-C3E4D7B79C11} = {FBBDE032-90E7-4080-83D8-433FA59EDD33}
 		{6C63D4A7-CB38-4A30-AD20-B8B043607B32} = {FBBDE032-90E7-4080-83D8-433FA59EDD33}
+		{2F1B30EC-D164-4BC3-BD0A-9E50D3B10A1F} = {71283B83-EFCF-46E7-8788-434DFDC3F6D1}
+		{FD5AB81B-6BDB-4786-8C85-55C8F45ABA31} = {71283B83-EFCF-46E7-8788-434DFDC3F6D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA1F824B-23E2-44A7-B2A2-510C54CA7EA5}

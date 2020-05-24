@@ -1,9 +1,11 @@
 ﻿using Prism.Ioc;
 using WaCo.MyTasks.DesktopUI.Views;
 using System.Windows;
+using Microsoft.Extensions.Logging;
 using Prism.Modularity;
 using WaCo.MyTasks.DataAccess;
 using WaCo.MyTasks.Services;
+using WaCo.MyTasks.Services.Interfaces;
 using WaCo.MyTasks.ToDo;
 
 namespace WaCo.MyTasks.DesktopUI
@@ -13,6 +15,10 @@ namespace WaCo.MyTasks.DesktopUI
     /// </summary>
     public partial class App
     {
+        public App()
+        {
+        }
+
         protected override Window CreateShell()
         {
             return Container.Resolve<MainWindow>();
@@ -20,12 +26,27 @@ namespace WaCo.MyTasks.DesktopUI
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterSingleton<ITaskService, TaskService>();
+            containerRegistry.RegisterSingleton<ITaskEntryService, TaskEntryService>();
+            containerRegistry.Register<ITaskEntryRepository, TaskEntryRepository>();
+
+            var logger = CreateLogger();
+            containerRegistry.RegisterInstance<ILogger>(logger);
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<ToDoModule>();
+        }
+
+        private ILogger CreateLogger()
+        {
+            var loggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder.AddFile("Logs/logfile-{Date}.log");
+            });
+            ILogger logger = loggerFactory.CreateLogger("WaCo.MyTasks.Log");
+
+            return logger;
         }
     }
 }
