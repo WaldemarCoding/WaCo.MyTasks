@@ -30,7 +30,7 @@ namespace WaCo.MyTasks.DesktopUI
             containerRegistry.Register<ITaskEntryRepository, TaskEntryRepository>();
 
             var logger = CreateLogger();
-            containerRegistry.RegisterInstance<ILogger>(logger);
+            containerRegistry.RegisterInstance(logger);
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
@@ -42,10 +42,11 @@ namespace WaCo.MyTasks.DesktopUI
         {
             var loggerFactory = LoggerFactory.Create(builder =>
             {
-                builder.AddFile("Logs/logfile-{Date}.log");
+                builder
+                    .SetMinimumLevel(LogLevel.Debug)
+                    .AddFile("Logs/logfile-{Date}.log");
             });
             ILogger logger = loggerFactory.CreateLogger("WaCo.MyTasks.Log");
-
             return logger;
         }
     }

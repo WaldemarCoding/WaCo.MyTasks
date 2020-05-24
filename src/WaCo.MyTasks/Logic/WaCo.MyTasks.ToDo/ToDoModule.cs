@@ -1,4 +1,5 @@
-﻿using Prism.Ioc;
+﻿using Microsoft.Extensions.Logging;
+using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 using WaCo.MyTasks.Core;
@@ -11,6 +12,8 @@ namespace WaCo.MyTasks.ToDo
     {
         public void OnInitialized(IContainerProvider containerProvider)
         {
+            var logger = containerProvider.Resolve<ILogger>();
+            logger.LogInformation("Navigation of {@View} to {@Region}", nameof(ViewA), RegionNames.ContentRegion);
             var rm = containerProvider.Resolve<IRegionManager>();
             rm.RequestNavigate(RegionNames.ContentRegion, nameof(ViewA));
         }

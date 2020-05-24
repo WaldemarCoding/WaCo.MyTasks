@@ -11,8 +11,9 @@ namespace WaCo.MyTasks.DataAccess
             builder
                 .AddFilter((category, level) =>
                     category == DbLoggerCategory.Database.Command.Name
-                    && level == LogLevel.Information)
-                .AddFile("Logs/logfile-{Date}.log");
+                    && level == LogLevel.Debug)
+                .AddFile("Logs/logfile-{Date}.log", 
+                    outputTemplate: "{Timestamp:o} {RequestId,13} [{Level:u3}] {Message:l} ({EventId:x8}){NewLine}{Exception}");
         });
 
         public DbSet<TaskEntry> TaskEntries { get; set; }
