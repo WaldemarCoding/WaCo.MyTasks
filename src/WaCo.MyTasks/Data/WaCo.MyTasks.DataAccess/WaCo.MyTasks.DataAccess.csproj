@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Base\WaCo.MyTasks.Core\WaCo.MyTasks.Core.csproj" />
     <ProjectReference Include="..\..\Base\WaCo.MyTasks.Models\WaCo.MyTasks.Models.csproj" />
+    <ProjectReference Include="..\WaCo.MyTasks.DataAccess.Interfaces\WaCo.MyTasks.DataAccess.Interfaces.csproj" />
   </ItemGroup>
 
   <ItemGroup>

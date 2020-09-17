@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using WaCo.MyTasks.DataAccess;
+using WaCo.MyTasks.DataAccess.Interfaces;
 using WaCo.MyTasks.Models;
 using WaCo.MyTasks.Services.Interfaces;
 

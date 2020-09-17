@@ -1,11 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Data\WaCo.MyTasks.DataAccess\WaCo.MyTasks.DataAccess.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\WaCo.MyTasks.DataAccess.Interfaces\WaCo.MyTasks.DataAccess.Interfaces.csproj" />
     <ProjectReference Include="..\WaCo.MyTasks.Core\WaCo.MyTasks.Core.csproj" />
     <ProjectReference Include="..\WaCo.MyTasks.Services.Interfaces\WaCo.MyTasks.Services.Interfaces.csproj" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace WaCo.MyTasks.DataAccess.Repositories
+namespace WaCo.MyTasks.DataAccess.Interfaces.Base
 {
     public interface IQueryableRepository<T>
     {
