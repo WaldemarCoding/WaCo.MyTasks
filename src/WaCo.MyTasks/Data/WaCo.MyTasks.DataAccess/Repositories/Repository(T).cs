@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using WaCo.MyTasks.DataAccess.Interfaces.Base;
 
 namespace WaCo.MyTasks.DataAccess.Repositories
 {
@@ -10,15 +11,24 @@ namespace WaCo.MyTasks.DataAccess.Repositories
         where TContext : DbContext
     {
         protected readonly TContext Context;
+        private readonly ILogger _logger;
 
         protected Repository(TContext context, ILogger logger)
         {
             Context = context;
+            _logger = logger;
         }
 
         public void Add(TEntity model)
         {
             Context.Set<TEntity>().Add(model);
+            _logger.LogDebug("Entry added {0}", model);
+        }
+
+        public void Update(TEntity model)
+        {
+            Context.Set<TEntity>().Update(model);
+            _logger.LogDebug("Entry updated {0}", model);
         }
 
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
@@ -39,11 +49,14 @@ namespace WaCo.MyTasks.DataAccess.Repositories
         public void Remove(TEntity model)
         {
             Context.Set<TEntity>().Remove(model);
+            _logger.LogDebug("Entry removed {0}", model);
         }
 
         public async Task SaveAsync()
         {
             await Context.SaveChangesAsync();
+            _logger.LogDebug("Changes saved to DB");
+            Context.DetachAllEntities();
         }
     }
 }

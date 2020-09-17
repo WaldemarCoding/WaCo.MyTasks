@@ -5,7 +5,7 @@ using System.Linq;
 using Prism.Commands;
 using Prism.Mvvm;
 using WaCo.MyTasks.Core;
-using WaCo.MyTasks.DataAccess;
+using WaCo.MyTasks.DataAccess.Interfaces;
 using WaCo.MyTasks.Models;
 using WaCo.MyTasks.Services.Interfaces;
 
@@ -55,13 +55,14 @@ namespace WaCo.MyTasks.ToDo.ViewModels
         private DelegateCommand _updateCmd;
         public DelegateCommand UpdateCmd => _updateCmd ??= new DelegateCommand(ExecuteUpdateCmd, CanExecuteUpdateCmd);
 
-        void ExecuteUpdateCmd()
+        async void ExecuteUpdateCmd()
         {
             var dt = DateTime.Now;
             SelectedTaskEntry.Titel = "Test " + dt.TimeOfDay;
             SelectedTaskEntry.Description = "Description " + dt.ToLongDateString();
             SelectedTaskEntry.StartDate = dt;
-            _taskEntryRepo.SaveAsync();
+            _taskEntryRepo.Update(SelectedTaskEntry);
+            await _taskEntryRepo.SaveAsync();
             ReloadCmd.Execute();
         }
 
@@ -76,6 +77,7 @@ namespace WaCo.MyTasks.ToDo.ViewModels
         void ExecuteDeleteCmd()
         {
             _taskEntryRepo.Remove(SelectedTaskEntry);
+            _taskEntryRepo.SaveAsync();
             ReloadCmd.Execute();
         }
 

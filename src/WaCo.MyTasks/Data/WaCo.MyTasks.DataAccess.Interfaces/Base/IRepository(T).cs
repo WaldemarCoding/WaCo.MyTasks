@@ -36,6 +36,12 @@ namespace WaCo.MyTasks.DataAccess.Interfaces.Base
         void Add(T model);
 
         /// <summary>
+        /// Updates a <see cref="T"/> entry.
+        /// </summary>
+        /// <param name="model">Entry to update.</param>
+        void Update(T model);
+
+        /// <summary>
         /// Removes the provided entry by <paramref name="model"/> of type <see cref="T"/>
         /// </summary>
         /// <param name="model">Entry to remove.</param>
